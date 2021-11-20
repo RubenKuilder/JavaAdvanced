@@ -2,6 +2,7 @@ package nhlstenden.javaminor.resources;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class DierController {
         this.dieren.put(3, new Dier("Cat", "", "Joris", 7));
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping()
     public String getDieren() throws JsonProcessingException {
         return mapper.writeValueAsString(dieren);
     }
@@ -46,5 +47,14 @@ public class DierController {
         }
 
         return mapper.writeValueAsString(dierenMetNamen);
+    }
+
+    // TODO: Validation
+    @PostMapping
+    public String addDieren(@RequestBody @Valid Dier dier) throws JsonProcessingException {
+        int hashmapSize = dieren.size();
+        dieren.put(hashmapSize, dier);
+
+        return mapper.writeValueAsString(dier);
     }
 }

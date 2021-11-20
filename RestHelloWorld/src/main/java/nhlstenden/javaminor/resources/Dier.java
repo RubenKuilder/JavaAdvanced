@@ -26,6 +26,12 @@ public class Dier {
         this.age = age;
     }
 
+    // The empty constructor is used by Jackson
+    // To deserialize it first constructs an object using this
+    // and then populates it by using setters
+    public Dier() {
+    }
+
     public String getSpecies() {
         return species;
     }
