@@ -1,6 +1,11 @@
-nhlstenden\javaminor\config\WebConfig.class
-nhlstenden\javaminor\resources\DierController.class
 nhlstenden\javaminor\config\Initializer.class
-nhlstenden\javaminor\resources\EigenaarController.class
-nhlstenden\javaminor\resources\Dier.class
-nhlstenden\javaminor\resources\Eigenaar.class
+nhlstenden\javaminor\resources\exceptions\ErrorResponse.class
+nhlstenden\javaminor\resources\models\Owner.class
+nhlstenden\javaminor\resources\exceptions\NoDataFoundException.class
+nhlstenden\javaminor\config\WebConfig.class
+nhlstenden\javaminor\resources\controllers\OwnerController.class
+nhlstenden\javaminor\resources\exceptions\ExceptionHandlers.class
+nhlstenden\javaminor\resources\models\Pet.class
+nhlstenden\javaminor\resources\repositories\OwnerRepository.class
+nhlstenden\javaminor\resources\repositories\PetRepository.class
+nhlstenden\javaminor\resources\controllers\PetController.class
