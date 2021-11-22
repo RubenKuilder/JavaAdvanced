@@ -3,7 +3,6 @@ package nhlstenden.javaminor.resources.repositories;
 import nhlstenden.javaminor.resources.exceptions.NoDataFoundException;
 import nhlstenden.javaminor.resources.models.Pet;
 import org.springframework.stereotype.Component;
-import org.springframework.web.server.MethodNotAllowedException;
 
 import java.util.HashMap;
 import java.util.Map;

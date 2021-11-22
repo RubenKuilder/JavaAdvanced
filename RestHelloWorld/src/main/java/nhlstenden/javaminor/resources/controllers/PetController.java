@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.net.URI;
 import java.util.HashMap;
 
 @RestController
@@ -54,5 +53,3 @@ public class PetController {
         return ResponseEntity.ok(String.format("Pet with ID %d deleted.", id));
     }
 }
-
-// TODO: Exception handlers (NoDataFoundException in de repositories)
