@@ -1,0 +1,8 @@
+javaminor/config/WebConfig.class
+javaminor/config/Initializer.class
+javaminor/resource/service/OwnerService.class
+javaminor/config/DatabaseConfig.class
+javaminor/resource/model/Pet.class
+javaminor/resource/controller/OwnerController.class
+javaminor/resource/repository/OwnerRepository.class
+javaminor/resource/model/Owner.class

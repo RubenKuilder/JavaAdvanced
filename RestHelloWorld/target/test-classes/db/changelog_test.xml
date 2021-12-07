@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <include file="db/changelog_master.xml"/>
+    <changeSet id="1" author="Ruben Kuilder">
+        <preConditions>
+            <tableExists tableName="owner"/>
+            <tableExists tableName="pet"/>
+        </preConditions>
+        <loadData tableName="owner" file="db/ownerEntity.csv">
+            <column header="name" name="name" type="STRING"/>
+            <column header="age" name="age" type="NUMERIC"/>
+            <column header="city" name="city" type="STRING"/>
+        </loadData>
+        <loadData tableName="pet" file="db/petEntity.csv">
+            <column header="age" name="age" type="NUMERIC"/>
+            <column header="breed" name="breed" type="STRING"/>
+            <column header="name" name="name" type="STRING"/>
+            <column header="species" name="species" type="STRING"/>
+            <column header="owner_id" name="owner_id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

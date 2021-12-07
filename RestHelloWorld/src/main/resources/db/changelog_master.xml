@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet id="1" author="Ruben Kuilder">
+        <preConditions>
+            <not>
+                <tableExists tableName="owner"/>
+            </not>
+        </preConditions>
+        <createTable tableName="owner">
+            <column name="id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="age" type="INTEGER"/>
+            <column name="city" type="varchar(255)"/>
+        </createTable>
+
+        <createTable tableName="pet">
+            <column name="id" type="INTEGER" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="age" type="INTEGER"/>
+            <column name="breed" type="varchar(255)"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="species" type="varchar(255)"/>
+            <column name="owner_id" type="INTEGER">
+                <constraints foreignKeyName="fk_pet_owner" referencedColumnNames="owner(id)"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
